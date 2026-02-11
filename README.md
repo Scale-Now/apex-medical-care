@@ -1,10 +1,5 @@
 # Apex Medical Research & Care — High-Fidelity Prototype
 
-Files added:
-- index.html
-- styles.css
-- script.js
-
 Overview:
 This is a high-fidelity static prototype demonstrating the requested ultra-modern, clinical aesthetic using an Electric Blue / Frost White / Gunmetal Grey palette. It includes:
 - Vertical fixed sidebar (desktop)
@@ -25,7 +20,4 @@ Updates:
 How to run:
 Open `index.html` in a browser (no build step required).
 
-Next steps (optional):
-- Replace SVG placeholder with a real 3D render or WebGL scene.
-- Hook the booking form to a backend API.
-- Add a11y labels and keyboard navigation improvements.
+
