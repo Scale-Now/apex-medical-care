@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apex Medical Research & Care — Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand">AMRC</div>
+      <nav>
+        <button class="nav-btn active" data-dept="cardiology" aria-label="Cardiology">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.5-8-10a6 6 0 0112 0c0 4.5-8 10-8 10z"/></svg>
+        </button>
+        <button class="nav-btn" data-dept="neurology" aria-label="Neurology">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+        </button>
+        <button class="nav-btn" data-dept="oncology" aria-label="Oncology">
+          <svg viewBox="0 0 24 24"><path d="M3 12h18M12 3v18"/></svg>
+        </button>
+        <button class="nav-btn" data-dept="radiology" aria-label="Radiology">
+          <svg viewBox="0 0 24 24"><path d="M2 12a10 10 0 0120 0A10 10 0 012 12z"/></svg>
+        </button>
+      </nav>
+      <div class="sidebar-footer">© Apex</div>
+    </aside>
+
+    <main class="main-canvas">
+      <header class="hero" id="hero">
+        <div class="hero-left">
+          <img class="hero-illustration" src="https://wallpapers.com/images/hd/doctor-pictures-l5y1qs2998u7rf0x.jpg" alt="Medical device and clinician">
+          <div class="render">
+            <!-- stylized 3D render placeholder (kept for decorative SVG) -->
+            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#0ea5ff" stop-opacity="1" />
+                  <stop offset="1" stop-color="#004e8a" stop-opacity="1" />
+                </linearGradient>
+                <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="20" result="b" />
+                  <feBlend in="SourceGraphic" in2="b" />
+                </filter>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#g1)" />
+              <g transform="translate(120,80) scale(0.9)" filter="url(#f1)">
+                <ellipse cx="260" cy="220" rx="160" ry="80" fill="#0fb0ff" opacity="0.25"/>
+                <path d="M120 140 C 200 60, 360 60, 440 140 L 420 420 C 360 480, 200 480, 140 420 Z" fill="#cdefff" opacity="0.22"/>
+                <rect x="200" y="160" width="240" height="150" rx="20" fill="#e9fbff" opacity="0.55"/>
+              </g>
+            </svg>
+          </div>
+
+            <div class="glass-text">
+            <h1>Apex Medical Research & Care</h1>
+            <p>Leading-edge clinical research and patient-first care with precision diagnostics.</p>
+            <div class="hero-cta">
+              <button class="primary" data-target="#appointment">Book Appointment</button>
+              <button class="ghost" data-target="#about">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="booking" id="booking">
+            <h2>Quick Book</h2>
+            <form id="bookingForm">
+              <label>Department
+                <select name="dept">
+                  <option>Cardiology</option>
+                  <option>Neurology</option>
+                  <option>Oncology</option>
+                  <option>Radiology</option>
+                </select>
+              </label>
+
+              <label>Date
+                <input type="date" name="date" />
+              </label>
+
+              <label>Time
+                <input type="time" name="time" />
+              </label>
+
+              <button type="submit" class="primary wide">Confirm</button>
+            </form>
+          </div>
+        </div>
+      </header>
+
+      <section class="services" id="services">
+        <h3 class="section-title">Our Services</h3>
+        <div class="masonry" id="masonry">
+          <!-- service cards -->
+          <article class="card" data-dept="cardiology"> <h4>Cardiology</h4> <p>Advanced heart care, imaging and intervention.</p></article>
+          <article class="card" data-dept="neurology"> <h4>Neurology</h4> <p>Comprehensive neurological diagnostics and therapy.</p></article>
+          <article class="card" data-dept="oncology"> <h4>Oncology</h4> <p>Precision oncology with clinical trial access.</p></article>
+          <article class="card" data-dept="radiology"> <h4>Radiology</h4> <p>AI-augmented imaging and rapid reporting.</p></article>
+          <article class="card" data-dept="orthopedics"> <h4>Orthopedics</h4> <p>Minimally invasive surgery and rehab.</p></article>
+          <article class="card" data-dept="pediatrics"> <h4>Pediatrics</h4> <p>Child-focused care and family support.</p></article>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews">
+        <h3 class="section-title">Patient Reviews</h3>
+        <div class="reviews-track" id="reviewsTrack">
+          <blockquote class="review">“Apex gave me confidence in every step — world-class diagnostics and human care.” <cite>— Anna S., Patient</cite></blockquote>
+          <blockquote class="review">“Cutting-edge clinical trials and supportive staff. Highly recommended.” <cite>— Dr. R. Patel, Participant</cite></blockquote>
+          <blockquote class="review">“Seamless booking and rapid results. The team is professional and kind.” <cite>— Michael L.</cite></blockquote>
+        </div>
+      </section>
+
+      <section class="appointment" id="appointment">
+        <h3 class="section-title">Make an Appointment</h3>
+        <div class="appointment-grid">
+          <div class="appointment-form">
+            <form id="appointmentForm">
+              <label>Full name<input name="name" required placeholder="Jane Doe"></label>
+              <label>Email<input type="email" name="email" required placeholder="you@domain.com"></label>
+              <label>Department<select name="dept">
+                <option>Cardiology</option>
+                <option>Neurology</option>
+                <option>Oncology</option>
+                <option>Radiology</option>
+              </select></label>
+              <label>Date<input type="date" name="date" required></label>
+              <label>Time<input type="time" name="time" required></label>
+              <button class="primary wide" type="submit">Request Appointment</button>
+            </form>
+          </div>
+          <div class="appointment-info">
+            <h4>How it works</h4>
+            <ol>
+              <li>Choose a department and preferred slot.</li>
+              <li>We confirm availability within 24 hours.</li>
+              <li>On arrival, your care pathway begins with streamlined intake.</li>
+            </ol>
+            <p class="muted">Emergency? Please call our 24/7 clinical line: <strong>+1 (800) 555-APEX</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="doctors" id="doctors">
+        <h3 class="section-title">Our Doctors</h3>
+        <div class="doctors-grid">
+          <article class="doctor-card">
+            <div class="avatar" aria-hidden><img src="https://i.pinimg.com/originals/92/4b/f7/924bf7b325e64b0168e824678c98b4e8.jpg" alt="Dr Maya Reed"/></div>
+            <div class="doc-info"><strong>Dr. Maya Reed</strong><span>Chief of Cardiology</span><p>Expert in minimally invasive cardiac procedures and heart failure management.</p></div>
+          </article>
+          <article class="doctor-card">
+            <div class="avatar" aria-hidden><img src="https://static.vecteezy.com/system/resources/previews/026/375/249/non_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Dr Omar Hale"/></div>
+            <div class="doc-info"><strong>Dr. Omar Hale</strong><span>Neurology</span><p>Focus on neurodegenerative disease and advanced neuroimaging.</p></div>
+          </article>
+          <article class="doctor-card">
+            <div class="avatar" aria-hidden><img src="https://i.pinimg.com/originals/a2/00/f5/a200f55cd75e85d9594f688f075606a0.jpg" alt="Dr Lina Wu"/></div>
+            <div class="doc-info"><strong>Dr. Lina Wu</strong><span>Oncology</span><p>Leads precision medicine trials and compassionate patient care.</p></div>
+          </article>
+          <article class="doctor-card">
+            <div class="avatar" aria-hidden><img src="https://wallpapers.com/images/hd/doctor-pictures-l5y1qs2998u7rf0x.jpg" alt="Dr Emil Kovac"/></div>
+            <div class="doc-info"><strong>Dr. Emil Kovac</strong><span>Radiology</span><p>Developer of AI-enabled imaging protocols for faster diagnosis.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="infrastructure" id="infrastructure">
+        <h3 class="section-title">Infrastructure & Labs</h3>
+        <div class="infra-grid">
+          <figure class="infra-card"><figcaption>Imaging Suite</figcaption><p>State-of-the-art MRI, CT and PET with low-dose protocols.</p></figure>
+          <figure class="infra-card"><figcaption>Clinical Research Labs</figcaption><p>GMP-compliant labs and sample biobanking for trials.</p></figure>
+          <figure class="infra-card"><figcaption>Operating & Procedure Theaters</figcaption><p>Hybrid ORs with advanced robotics and real-time imaging.</p></figure>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <h3 class="section-title">About Apex Medical Research & Care</h3>
+        <div class="about-grid">
+          <div>
+            <h4>Our Mission</h4>
+            <p>To advance human health through rigorous research and compassionate clinical care — integrating innovation, data, and patient partnership.</p>
+            <div class="stats" aria-hidden>
+              <div class="stat"><strong class="counter" data-target="120">0</strong><span>Clinical Trials</span></div>
+              <div class="stat"><strong class="counter" data-target="85">0</strong><span>Specialists</span></div>
+              <div class="stat"><strong class="counter" data-target="48">0</strong><span>Labs & Suites</span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Our Values</h4>
+            <ul>
+              <li>Patient-first decision making</li>
+              <li>Scientific integrity</li>
+              <li>Collaborative innovation</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Accreditations</h4>
+            <p>JCI-accredited, ISO-certified labs, and recognized research partnerships with leading universities.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <h3 class="section-title">Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <div class="faq-question"><span>How do I participate in a clinical trial?</span><span class="toggle">+</span></div>
+          <div class="faq-answer">You can express interest via the appointment form or contact our research team at trials@apexmed.org. We screen participants based on eligibility criteria.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>What insurance do you accept?</span><span class="toggle">+</span></div>
+          <div class="faq-answer">We accept most major insurers. Please bring your insurance card to intake and our team will verify coverage.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Is telemedicine available?</span><span class="toggle">+</span></div>
+          <div class="faq-answer">Yes — select the telemedicine option during booking and our care coordinators will arrange a virtual consult.</div>
+        </div>
+      </section>
+
+      <div class="doctor-swipe" id="doctorSwipe">
+        <div class="swipe-track">
+          <div class="doc"> <img src="https://i.pinimg.com/originals/92/4b/f7/924bf7b325e64b0168e824678c98b4e8.jpg" alt="Dr Maya Reed"/><div class="meta"><strong>Dr. Maya Reed</strong><span>Cardiology</span></div></div>
+          <div class="doc"> <img src="https://static.vecteezy.com/system/resources/previews/026/375/249/non_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Dr Omar Hale"/><div class="meta"><strong>Dr. Omar Hale</strong><span>Neurology</span></div></div>
+          <div class="doc"> <img src="https://i.pinimg.com/originals/a2/00/f5/a200f55cd75e85d9594f688f075606a0.jpg" alt="Dr Lina Wu"/><div class="meta"><strong>Dr. Lina Wu</strong><span>Oncology</span></div></div>
+        </div>
+      </div>
+
+    </main>
+
+    <nav class="bottom-nav" aria-label="Bottom navigation">
+      <button class="bn-item"> <svg viewBox="0 0 24 24"><path d="M3 12h18"/></svg><span>Home</span></button>
+      <button class="bn-item"> <svg viewBox="0 0 24 24"><path d="M12 2v20"/></svg><span>Doctors</span></button>
+      <button class="bn-item"> <svg viewBox="0 0 24 24"><path d="M2 12a10 10 0 0120 0"/></svg><span>Book</span></button>
+      <button class="bn-item"> <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg><span>More</span></button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
